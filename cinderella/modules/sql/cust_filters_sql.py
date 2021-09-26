@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from YoneRobot.modules.helper_funcs.msg_types import Types
-from YoneRobot.modules.sql import BASE, SESSION
+from cinderella.modules.helper_funcs.msg_types import Types
+from cinderella.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
