@@ -1,6 +1,9 @@
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
 
+from cinderella import ALLOW_EXCL
+import cinderella.modules.sql.blacklistusers_sql as sql
+
 if ALLOW_EXCL:
     CMD_STARTERS = ("/", "!")
 else:
