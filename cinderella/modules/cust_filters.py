@@ -15,25 +15,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from YoneRobot import dispatcher, LOGGER, DRAGONS
-from YoneRobot.modules.disable import DisableAbleCommandHandler
-from YoneRobot.modules.helper_funcs.handlers import MessageHandlerChecker
-from YoneRobot.modules.helper_funcs.chat_status import user_admin
-from YoneRobot.modules.helper_funcs.extraction import extract_text
-from YoneRobot.modules.helper_funcs.filters import CustomFilters
-from YoneRobot.modules.helper_funcs.misc import build_keyboard_parser
-from YoneRobot.modules.helper_funcs.msg_types import get_filter_type
-from YoneRobot.modules.helper_funcs.string_handling import (
+from cinderella import dispatcher, LOGGER, DRAGONS
+from cinderella.modules.disable import DisableAbleCommandHandler
+from cinderella.modules.helper_funcs.handlers import MessageHandlerChecker
+from cinderella.modules.helper_funcs.chat_status import user_admin
+from cinderella.modules.helper_funcs.extraction import extract_text
+from cinderella.modules.helper_funcs.filters import CustomFilters
+from cinderella.modules.helper_funcs.misc import build_keyboard_parser
+from cinderella.modules.helper_funcs.msg_types import get_filter_type
+from cinderella.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from YoneRobot.modules.sql import cust_filters_sql as sql
+from cinderella.modules.sql import cust_filters_sql as sql
 
-from YoneRobot.modules.connection import connected
+from cinderella.modules.connection import connected
 
-from YoneRobot.modules.helper_funcs.alternate import send_message, typing_action
+from cinderella.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
