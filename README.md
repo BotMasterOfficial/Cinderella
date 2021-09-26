@@ -21,7 +21,7 @@
 
 ## How to setup/deploy.
 For easiest way to deploy this Bot click on the below button
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Marie"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Cinderella"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
  
 ##
 
