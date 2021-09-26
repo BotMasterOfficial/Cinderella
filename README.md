@@ -1,20 +1,20 @@
-<a href="https://github.com/BitMasterOfficial/Marie"><img src="https://img.shields.io/badge/Marie-gold?&style=flat-square?&logo=github" width=600px></a></p>
+<a href="https://github.com/BotMasterOfficial/Cinderella"><img src="https://img.shields.io/badge/Cinderella-gold?&style=flat-square?&logo=github" width=600px></a></p>
 
 #
 
-[![Deploy](https://telegra.ph/file/e75b8ff32e728d5780ee6.png)](https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Marie.git)
+[![Deploy](https://telegra.ph/file/e75b8ff32e728d5780ee6.png)](https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Cinderella.git)
 
 ##
 
 <p align="center">
-    <a href="https://github.com/BotMasterOfficial/Marie/stargazers"><img src="https://img.shields.io/github/stars/BotMasterOfficial/Marie?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+    <a href="https://github.com/BotMasterOfficial/Cinderella/stargazers"><img src="https://img.shields.io/github/stars/BotMasterOfficial/Cinderella?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
 </p>
 <p align="center">
-    <a href="https://app.codacy.com/manual/BotMasterOfficial/Marie/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/BotMasterOfficial/Marie"> <img src="https://img.shields.io/github/repo-size/BotMasterOfficial/Marie?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/BotMasterOfficial/Marie/commits/mukesh"> <img src="https://img.shields.io/github/last-commit/BotMasterOfficial/Marie?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/BotMasterOfficial/Marie/issues"> <img src="https://img.shields.io/github/issues/BotMasterOfficial/Marie?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/BotMasterOfficial/Marie/network/members"> <img src="https://img.shields.io/github/forks/BotMasterOfficial/Marie?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://app.codacy.com/manual/BotMasterOfficial/Cinderella/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/BotMasterOfficial/Cinderella"> <img src="https://img.shields.io/github/repo-size/BotMasterOfficial/Cinderella?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Cinderella/commits/mukesh"> <img src="https://img.shields.io/github/last-commit/BotMasterOfficial/Cinderella?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Cinderella/issues"> <img src="https://img.shields.io/github/issues/BotMasterOfficial/Cinderella?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Cinderella/network/members"> <img src="https://img.shields.io/github/forks/BotMasterOfficial/Cinderella?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
 </p>
 
 ##
