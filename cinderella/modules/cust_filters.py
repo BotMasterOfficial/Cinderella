@@ -15,7 +15,7 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from cinderella import dispatcher, LOGGER, DRAGONS
+from cinderella import dispatcher, LOGGER, SUDO_USERS
 from cinderella.modules.disable import DisableAbleCommandHandler
 from cinderella.modules.helper_funcs.handlers import MessageHandlerChecker
 from cinderella.modules.helper_funcs.chat_status import user_admin
@@ -506,7 +506,7 @@ def rmall_filters(update, context):
     chat = update.effective_chat
     user = update.effective_user
     member = chat.get_member(user.id)
-    if member.status != "creator" and user.id not in DRAGONS:
+    if member.status != "creator" and user.id not in SUDO_USERS:
         update.effective_message.reply_text(
             "Only the chat owner can clear all notes at once."
         )
@@ -535,7 +535,7 @@ def rmall_callback(update, context):
     msg = update.effective_message
     member = chat.get_member(query.from_user.id)
     if query.data == "filters_rmall":
-        if member.status == "creator" or query.from_user.id in DRAGONS:
+        if member.status == "creator" or query.from_user.id in SUDO_USERS:
             allfilters = sql.get_chat_triggers(chat.id)
             if not allfilters:
                 msg.edit_text("No filters in this chat, nothing to stop!")
@@ -558,7 +558,7 @@ def rmall_callback(update, context):
         if member.status == "member":
             query.answer("You need to be admin to do this.")
     elif query.data == "filters_cancel":
-        if member.status == "creator" or query.from_user.id in DRAGONS:
+        if member.status == "creator" or query.from_user.id in SUDO_USERS:
             msg.edit_text("Clearing of all filters has been cancelled.")
             return
         if member.status == "administrator":
