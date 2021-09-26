@@ -8,16 +8,16 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from tg_bot import dispatcher, LOGGER
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.chat_status import user_admin
-from tg_bot.modules.helper_funcs.extraction import extract_text
-from tg_bot.modules.helper_funcs.filters import CustomFilters
-from tg_bot.modules.helper_funcs.misc import build_keyboard
-from tg_bot.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
-from tg_bot.modules.sql import cust_filters_sql as sql
+from cinderella import dispatcher, LOGGER
+from cinderella.modules.disable import DisableAbleCommandHandler
+from cinderella.modules.helper_funcs.chat_status import user_admin
+from cinderella.modules.helper_funcs.extraction import extract_text
+from cinderella.modules.helper_funcs.filters import CustomFilters
+from cinderella.modules.helper_funcs.misc import build_keyboard
+from cinderella.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
+from cinderella.modules.sql import cust_filters_sql as sql
 
-from tg_bot.modules.connection import connected
+from cinderella.modules.connection import connected
 
 HANDLER_GROUP = 10
 BASIC_FILTER_STRING = "*Filters in this chat:*\n"
