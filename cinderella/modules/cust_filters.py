@@ -8,16 +8,16 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-from cinderella import dispatcher, LOGGER
-from cinderella.modules.disable import DisableAbleCommandHandler
-from cinderella.modules.helper_funcs.chat_status import user_admin
-from cinderella.modules.helper_funcs.extraction import extract_text
-from cinderella.modules.helper_funcs.filters import CustomFilters
-from cinderella.modules.helper_funcs.misc import build_keyboard
-from cinderella.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
-from cinderella.modules.sql import cust_filters_sql as sql
+from tg_bot import dispatcher, LOGGER
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.chat_status import user_admin
+from tg_bot.modules.helper_funcs.extraction import extract_text
+from tg_bot.modules.helper_funcs.filters import CustomFilters
+from tg_bot.modules.helper_funcs.misc import build_keyboard
+from tg_bot.modules.helper_funcs.string_handling import split_quotes, button_markdown_parser
+from tg_bot.modules.sql import cust_filters_sql as sql
 
-from cinderella.modules.connection import connected
+from tg_bot.modules.connection import connected
 
 HANDLER_GROUP = 10
 BASIC_FILTER_STRING = "*Filters in this chat:*\n"
@@ -40,13 +40,13 @@ def list_handlers(bot: Bot, update: Update):
             filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*Filters in {}*:\n".format(chat_name)
+            filter_list = "*Filters in {}*:\n"
 
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
     if not all_handlers:
-        update.effective_message.reply_text("No filters in *{}*!".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+        update.effective_message.reply_text("No filters in {}!".format(chat_name))
         return
 
     for keyword in all_handlers:
@@ -145,7 +145,7 @@ def filters(bot: Bot, update: Update):
     sql.add_filter(chat_id, keyword, content, is_sticker, is_document, is_image, is_audio, is_voice, is_video,
                    buttons)
 
-    msg.reply_text("Filter '{}' added in *{}*!".format(keyword, chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+    msg.reply_text("Handler '{}' added in *{}*!".format(keyword, chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
     raise DispatcherHandlerStop
 
 
@@ -173,7 +173,7 @@ def stop_filter(bot: Bot, update: Update):
     chat_filters = sql.get_chat_triggers(chat_id)
 
     if not chat_filters:
-        update.effective_message.reply_text("No filters are active in *{}*!".format(chat_name), parse_mode=telegram.ParseMode.MARKDOWN)
+        update.effective_message.reply_text("No filters are active here!")
         return
 
     for keyword in chat_filters:
@@ -193,9 +193,11 @@ def reply_filter(bot: Bot, update: Update):
     if not to_match:
         return
 
+    # my custom thing
     if message.reply_to_message:
         message = message.reply_to_message
-
+    ad_filter = ""
+    # my custom thing
 
     chat_filters = sql.get_chat_triggers(chat.id)
     for keyword in chat_filters:
@@ -203,15 +205,17 @@ def reply_filter(bot: Bot, update: Update):
         if re.search(pattern, to_match, flags=re.IGNORECASE):
             filt = sql.get_filter(chat.id, keyword)
             buttons = sql.get_buttons(chat.id, filt.keyword)
-            if len(buttons) > 0:
-                keyb = build_keyboard(buttons)
-                keyboard = InlineKeyboardMarkup(keyb)
             if filt.is_sticker:
                 message.reply_sticker(filt.reply)
             elif filt.is_document:
                 message.reply_document(filt.reply)
             elif filt.is_image:
-                message.reply_photo(filt.reply, reply_markup=keyboard)
+                if len(buttons) > 0:
+                    keyb = build_keyboard(buttons)
+                    keyboard = InlineKeyboardMarkup(keyb)
+                    message.reply_photo(filt.reply, reply_markup=keyboard)
+                else:
+                    message.reply_photo(filt.reply)
             elif filt.is_audio:
                 message.reply_audio(filt.reply)
             elif filt.is_voice:
@@ -227,62 +231,30 @@ def reply_filter(bot: Bot, update: Update):
                     should_preview_disabled = False
 
                 try:
-                    message.reply_text(filt.reply, parse_mode=ParseMode.MARKDOWN,
+                    message.reply_text(ad_filter + "\n" + filt.reply, parse_mode=ParseMode.MARKDOWN,
                                        disable_web_page_preview=should_preview_disabled,
                                        reply_markup=keyboard)
                 except BadRequest as excp:
                     if excp.message == "Unsupported url protocol":
                         message.reply_text("You seem to be trying to use an unsupported url protocol. Telegram "
                                            "doesn't support buttons for some protocols, such as tg://. Please try "
-                                           "again, or ask in @Sur_vivor for help.")
+                                           "again, or ask in @MarieSupport for help.")
                     elif excp.message == "Reply message not found":
                         bot.send_message(chat.id, filt.reply, parse_mode=ParseMode.MARKDOWN,
                                          disable_web_page_preview=True,
                                          reply_markup=keyboard)
                     else:
                         message.reply_text("This note could not be sent, as it is incorrectly formatted. Ask in "
-                                           "@Sur_vivor if you can't figure out why!")
+                                           "@MarieSupport if you can't figure out why!")
                         LOGGER.warning("Message %s could not be parsed", str(filt.reply))
                         LOGGER.exception("Could not parse filter %s in chat %s", str(filt.keyword), str(chat.id))
 
             else:
                 # LEGACY - all new filters will have has_markdown set to True.
-                message.reply_text(filt.reply)
+                message.reply_text(ad_filter + "\n" + filt.reply)
             break
 
-@user_admin
-def stop_all_filters(bot: Bot, update: Update):
-    chat = update.effective_chat
-    user = update.effective_user
-    message = update.effective_message
 
-    if chat.type == "private":
-        chat.title = "local filters"
-    else:
-        owner = chat.get_member(user.id)
-        chat.title = chat.title
-        if owner.status != 'creator':
-            message.reply_text("You must be this chat creator.")
-            return
-
-    x = 0
-    flist = sql.get_chat_triggers(chat.id)
-
-    if not flist:
-        message.reply_text("There aren't any active filters in {}!".format(chat.title))
-        return
-
-    f_flist = []
-    for f in flist:
-        x += 1
-        f_flist.append(f)
-
-    for fx in f_flist:
-        sql.remove_filter(chat.id, fx)
-
-    message.reply_text("{} filters from this chat have been removed.".format(x))
-    
-    
 def __stats__():
     return "{} filters, across {} chats.".format(sql.num_filters(), sql.num_chats())
 
@@ -305,19 +277,16 @@ is mentioned. If you reply to a sticker with a keyword, the bot will reply with 
 keywords are in lowercase. If you want your keyword to be a sentence, use quotes. eg: /filter "hey there" How you \
 doin?
  - /stop <filter keyword>: stop that filter.
- - /stopall: stop all filters
 """
 
-__mod_name__ = "FILTERS"
+__mod_name__ = "📂 Filters 📂"
 
 FILTER_HANDLER = CommandHandler("filter", filters)
 STOP_HANDLER = CommandHandler("stop", stop_filter)
-STOPALL_HANDLER = DisableAbleCommandHandler("stopall", stop_all_filters)
 LIST_HANDLER = DisableAbleCommandHandler("filters", list_handlers, admin_ok=True)
-CUST_FILTER_HANDLER = MessageHandler(CustomFilters.has_text, reply_filter)
+CUST_FILTER_HANDLER = MessageHandler(CustomFilters.has_text, reply_filter, edited_updates=True)
 
 dispatcher.add_handler(FILTER_HANDLER)
 dispatcher.add_handler(STOP_HANDLER)
-dispatcher.add_handler(STOPALL_HANDLER)
 dispatcher.add_handler(LIST_HANDLER)
 dispatcher.add_handler(CUST_FILTER_HANDLER, HANDLER_GROUP)
