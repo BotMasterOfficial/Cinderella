@@ -38,7 +38,7 @@ For easiest way to deploy this Bot click on the below button
 ## Sᴜᴘᴘᴏʀᴛ
 
 <p align="center">
-    <a href="https://t.me/BotMasterOfficial"> <img src="https://img.shields.io/badge/Join-Our-green" /> <img src="https://img.shields.io/badge/Support-Channel-critical" /> </a>
+    <a href="https://t.me/BotMasterOfficial"> <img src="https://img.shields.io/badge/Join-Our-green" /> <img src="https://img.shields.io/badge/Support-Group-critical" /> </a>
 </p>
 <a href="https://t.me/BotMasterOfficial"><img src="https://img.shields.io/badge/Telegram-Bot%20Master%20Official%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
 
@@ -53,16 +53,15 @@ For easiest way to deploy this Bot click on the below button
 
 ##
 
-## Find This Bot on Telegram
+## Find Cinderella on Telegram
 <p align="center">
-    <a href="https://t.me/RMCMG_Filter_Bot"> <img src="https://img.shields.io/badge/Best-Bot-ff69b4" /> </a>
-    <a href="https://t.me/RMCMG_Filter_Bot"><img src="https://img.shields.io/badge/Telegram-RMCMG%20BOT%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
-    <a href="https://t.me/Emma_Miller_Bot"><img src="https://img.shields.io/badge/Telegram-Emma%20Miller%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
+    <a href="https://t.me/CinderellaProBot"> <img src="https://img.shields.io/badge/Best-Bot-ff69b4" /> </a>
+    <a href="https://t.me/CinderellaProBot"><img src="https://img.shields.io/badge/Telegram-Cinderella-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
 </p>
 
 ##
 
 ## A modular Telegram Python bot running on python3 with a sqlalchemy database.
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/BotMasterOfficial/Marie.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/BotMasterOfficial/Cinderella.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
