@@ -1,131 +1,68 @@
-### @CinderellaProBot // http://www.telegram.dog/CinderellaProBot
-> with HunterxHunter theme.
+<a href="https://github.com/BitMasterOfficial/Marie"><img src="https://img.shields.io/badge/Marie-gold?&style=flat-square?&logo=github" width=600px></a></p>
 
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)  
-[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+#
 
-Modular Telegram bot for managing your groups with a extras features with HunterxHunter theme.
+[![Deploy](https://telegra.ph/file/e75b8ff32e728d5780ee6.png)](https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Marie.git)
+
+##
 
 <p align="center">
-  <a href="https://github.com/Sur-vivor/CinderellaProBot/fork">
-    <img src="https://img.shields.io/github/forks/Sur-vivor/CinderellaProBot?label=Fork&style=social">
-    
-  </a>
-  <a href="https://github.com/Sur-vivor/CinderellaProBot">
-    <img src="https://img.shields.io/github/stars/Sur-vivor/CinderellaProBot?style=social">
-  </a>
+    <a href="https://github.com/BotMasterOfficial/Marie/stargazers"><img src="https://img.shields.io/github/stars/BotMasterOfficial/Marie?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
+</p>
+<p align="center">
+    <a href="https://app.codacy.com/manual/BotMasterOfficial/Marie/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/BotMasterOfficial/Marie"> <img src="https://img.shields.io/github/repo-size/BotMasterOfficial/Marie?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Marie/commits/mukesh"> <img src="https://img.shields.io/github/last-commit/BotMasterOfficial/Marie?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Marie/issues"> <img src="https://img.shields.io/github/issues/BotMasterOfficial/Marie?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/BotMasterOfficial/Marie/network/members"> <img src="https://img.shields.io/github/forks/BotMasterOfficial/Marie?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
 </p>
 
-### Click Below Image to Deploy
-[![Deploy](https://telegra.ph/file/511ad504656e712b88235.jpg)](https://heroku.com/deploy?template=https://github.com/Sur-vivor/CinderellaProBot.git)
+##
 
-### Configuration
+## How to setup/deploy.
+For easiest way to deploy this Bot click on the below button
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/BotMasterOfficial/Marie"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+ 
+##
 
-There are two possible ways of configuring your bot: a config.py file, or ENV variables.
+## Mᴀᴅᴇ Bʏ
 
-The prefered version is to use a `config.py` file, as it makes it easier to see all your settings grouped together.
-This file should be placed in your `cinderella` folder, alongside the `__main__.py` file . 
-This is where your bot token will be loaded from, as well as your database URI (if you're using a database), and most of 
-your other settings.
-
-It is recommended to import sample_config and extend the Config class, as this will ensure your config contains all 
-defaults set in the sample_config, hence making it easier to upgrade.
-
-An example `config.py` file could be:
-```
-from cinderella.sample_config import Config
+<p align="center">
+    <a href="https://t.me/mkspali"> <img src="https://img.shields.io/badge/Bestest-Master-ff69b4" /> </a>
+</p>
+<a href="https://t.me/mkspali"><img src="https://img.shields.io/badge/Telegram-Mukesh%20Solanki-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
 
 
-class Development(Config):
-    OWNER_ID = 1118936839  # my telegram ID
-    OWNER_USERNAME = "Sur_vivor"  # my telegram username
-    API_KEY = "your bot api key"  # my api key, as provided by the botfather
-    SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
-    MESSAGE_DUMP = '-1234567890' # some group chat that your bot is a member of
-    USE_MESSAGE_DUMP = True
-    SUDO_USERS = []  # List of id's for users which have sudo access to the bot.
-    LOAD = []
-    NO_LOAD = ['translation']
-```
+##
 
-If you can't have a config.py file (EG on heroku), it is also possible to use environment variables.
-The following env variables are supported:
- - `ENV`: Setting this to ANYTHING will enable env variables
+## Sᴜᴘᴘᴏʀᴛ
 
- - `TOKEN`: Your bot token, as a string.
- - `OWNER_ID`: An integer of consisting of your owner ID
- - `OWNER_USERNAME`: Your username
-
- - `DATABASE_URL`: Your database URL
- - `MESSAGE_DUMP`: optional: a chat where your replied saved messages are stored, to stop people deleting their old 
- - `LOAD`: Space separated list of modules you would like to load
- - `NO_LOAD`: Space separated list of modules you would like NOT to load
- - `WEBHOOK`: Setting this to ANYTHING will enable webhooks when in env mode
- messages
- - `URL`: The URL your webhook should connect to (only needed for webhook mode)
-
- - `SUDO_USERS`: A space separated list of user_ids which should be considered sudo users
- - `SUPPORT_USERS`: A space separated list of user_ids which should be considered support users (can gban/ungban,
- nothing else)
- - `WHITELIST_USERS`: A space separated list of user_ids which should be considered whitelisted - they can't be banned.
- - `DONATION_LINK`: Optional: link where you would like to receive donations.
- - `CERT_PATH`: Path to your webhook certificate
- - `PORT`: Port to use for your webhooks
- - `DEL_CMDS`: Whether to delete commands from users which don't have rights to use that command
- - `STRICT_GBAN`: Enforce gbans across new groups as well as old groups. When a gbanned user talks, he will be banned.
- - `WORKERS`: Number of threads to use. 8 is the recommended (and default) amount, but your experience may vary.
- __Note__ that going crazy with more threads wont necessarily speed up your bot, given the large amount of sql data 
- accesses, and the way python asynchronous calls work.
- - `BAN_STICKER`: Which sticker to use when banning people.
- - `ALLOW_EXCL`: Whether to allow using exclamation marks ! for commands as well as /.
-
-### Python dependencies
-
-Install the necessary python dependencies by moving to the project directory and running:
-
-`pip3 install -r requirements.txt`.
-
-This will install all necessary python packages.
-
-### Database
-
-If you wish to use a database-dependent module (eg: locks, notes, userinfo, users, filters, welcomes),
-you'll need to have a database installed on your system. I use postgres, so I recommend using it for optimal compatibility.
-
-In the case of postgres, this is how you would set up a the database on a debian/ubuntu system. Other distributions may vary.
-
-- install postgresql:
-
-`sudo apt-get update && sudo apt-get install postgresql`
-
-- change to the postgres user:
-
-`sudo su - postgres`
-
-- create a new database user (change YOUR_USER appropriately):
-
-`createuser -P -s -e YOUR_USER`
-
-This will be followed by you needing to input your password.
-
-- create a new database table:
-
-`createdb -O YOUR_USER YOUR_DB_NAME`
-
-Change YOUR_USER and YOUR_DB_NAME appropriately.
-
-- finally:
-
-`psql YOUR_DB_NAME -h YOUR_HOST YOUR_USER`
-
-This will allow you to connect to your database via your terminal.
-By default, YOUR_HOST should be 0.0.0.0:5432.
-
-You should now be able to build your database URI. This will be:
-
-`sqldbtype://username:pw@hostname:port/db_name`
-
-Replace sqldbtype with whichever db youre using (eg postgres, mysql, sqllite, etc)
-repeat for your username, password, hostname (localhost?), port (5432?), and db name.
+<p align="center">
+    <a href="https://t.me/BotMasterOfficial"> <img src="https://img.shields.io/badge/Join-Our-green" /> <img src="https://img.shields.io/badge/Support-Channel-critical" /> </a>
+</p>
+<a href="https://t.me/BotMasterOfficial"><img src="https://img.shields.io/badge/Telegram-Bot%20Master%20Official%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
 
 
+##
+
+## Sᴏᴜʀᴄᴇ
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Python-black" width=50px/>  <img src="https://img.shields.io/badge/Telethn-black" width=50px/>
+</p>
+
+##
+
+## Find This Bot on Telegram
+<p align="center">
+    <a href="https://t.me/RMCMG_Filter_Bot"> <img src="https://img.shields.io/badge/Best-Bot-ff69b4" /> </a>
+    <a href="https://t.me/RMCMG_Filter_Bot"><img src="https://img.shields.io/badge/Telegram-RMCMG%20BOT%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
+    <a href="https://t.me/Emma_Miller_Bot"><img src="https://img.shields.io/badge/Telegram-Emma%20Miller%20-gold?&style=flat-square?&logo=telegram" width=600px></a></p>
+</p>
+
+##
+
+## A modular Telegram Python bot running on python3 with a sqlalchemy database.
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/BotMasterOfficial/Marie.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
