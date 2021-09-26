@@ -1,4 +1,4 @@
-from cinderella import DEV_USERS, DRAGONS, DEMONS
+from cinderella import SUPPORT_USERS, SUDO_USERS, DEV_USERS
 from telegram import Message
 from telegram.ext import BaseFilter
 
